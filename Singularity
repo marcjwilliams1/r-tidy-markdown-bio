@@ -1,5 +1,5 @@
 BootStrap: shub
-From: nickjer/singularity-rstudio
+From: nickjer/singularity-rstudio:3.5.2
 
 %labels
   Maintainer Marc J Williams
