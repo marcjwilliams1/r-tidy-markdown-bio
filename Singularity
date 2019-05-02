@@ -18,7 +18,7 @@ From: nickjer/singularity-rstudio
   export PATH=/usr/lib/rstudio-server/bin:${PATH}
 
 %post
-   apt-get install python-virtualenv
+   apt-get install -y python
    apt-get update && \
    apt-get install -y build-essential git curl wget &&\
    apt-get install -y tzdata language-pack-ja &&\
