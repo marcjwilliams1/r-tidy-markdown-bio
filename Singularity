@@ -23,9 +23,6 @@ From: nickjer/singularity-rstudio
      repos='https://cran.revolutionanalytics.com/', \
      dependencies=TRUE, \
      clean = TRUE)"
-   Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
-   Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
-   Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
    Rscript -e "tensorflow::install_tensorflow()"
    apt-get update && \
    apt-get install -y build-essential git curl wget &&\
@@ -34,6 +31,7 @@ From: nickjer/singularity-rstudio
    apt-get clean
    update-locale LANG=ja_JP.UTF8
    dpkg-reconfigure tzdata
+
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('scran')"
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
@@ -50,6 +48,12 @@ From: nickjer/singularity-rstudio
                   biocLite('SingleCellExperiment')"
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('edgeR')"
+   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+                   biocLite('Rsamtools')"
+
+   Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
+   Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
+   Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
 
 %runscript
 pandoc "$@"
