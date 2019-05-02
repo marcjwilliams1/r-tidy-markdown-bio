@@ -18,12 +18,7 @@ From: nickjer/singularity-rstudio
   export PATH=/usr/lib/rstudio-server/bin:${PATH}
 
 %post
-  # Install tidyverse and other packages
-   Rscript -e "install.packages(pkgs = c('tidyverse','caTools', 'devtools', 'rprojroot', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'viridis', 'dbscan', 'reticulate', 'Rcpp', 'tensorflow', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
-     repos='https://cran.revolutionanalytics.com/', \
-     dependencies=TRUE, \
-     clean = TRUE)"
-   Rscript -e "tensorflow::install_tensorflow()"
+   apt-get install python-virtualenv
    apt-get update && \
    apt-get install -y build-essential git curl wget &&\
    apt-get install -y tzdata language-pack-ja &&\
@@ -31,6 +26,14 @@ From: nickjer/singularity-rstudio
    apt-get clean
    update-locale LANG=ja_JP.UTF8
    dpkg-reconfigure tzdata
+
+   # Install tidyverse and other packages
+    Rscript -e "install.packages(pkgs = c('tidyverse','caTools', 'devtools', 'rprojroot', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'viridis', 'dbscan', 'reticulate', 'Rcpp', 'tensorflow', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
+      repos='https://cran.revolutionanalytics.com/', \
+      dependencies=TRUE, \
+      clean = TRUE)"
+
+   script -e "tensorflow::install_tensorflow()"
 
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('scran')"
@@ -50,6 +53,8 @@ From: nickjer/singularity-rstudio
                    biocLite('edgeR')"
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('Rsamtools')"
+   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+                   biocLite('seqinr')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
