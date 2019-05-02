@@ -1,5 +1,5 @@
 BootStrap: shub
-From: nickjer/singularity-rstudio:3.5.2
+From: granek/singularity-rstudio-tidyverse:3.5.2
 
 %labels
   Maintainer Marc J Williams
@@ -32,7 +32,7 @@ From: nickjer/singularity-rstudio:3.5.2
    dpkg-reconfigure tzdata
 
    # Install tidyverse and other packages
-    Rscript -e "install.packages(pkgs = c('tidyverse','caTools', 'devtools', 'rprojroot', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'viridis', 'dbscan', 'reticulate', 'tensorflow', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
+    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'viridis', 'dbscan', 'reticulate', 'tensorflow', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
