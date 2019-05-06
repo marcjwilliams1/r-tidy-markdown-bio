@@ -6,7 +6,7 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
 #  RStudio_Version 1.1.463
 
 %help
-  This will run RStudio Server with tidyverse and support for knitting
+  This will run RStudio Server with tidyverse and support for knitting plus pandoc for document conversion. Also included are a collection of bioconductor packages for single cell analysis
 
 %apprun rserver
   exec rserver "${@}"
@@ -26,8 +26,8 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
    update-locale LANG=ja_JP.UTF8
    dpkg-reconfigure tzdata
 
-   # Install tidyverse and other packages
-    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
+   # Install some other useful R packages
+    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'ggforce'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
