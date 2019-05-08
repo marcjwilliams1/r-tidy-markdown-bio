@@ -27,7 +27,7 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
    dpkg-reconfigure tzdata
 
    # Install some other useful R packages
-    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'ggforce'), \
+    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
