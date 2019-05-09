@@ -41,6 +41,8 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('IRanges')"
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+                     biocLite('rtracklayer')"
+   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('GenVisR')"
    R --slave -e "source('https://bioconductor.org/biocLite.R'); \
                     biocLite('Biostrings')"
