@@ -32,27 +32,27 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
       dependencies=TRUE, \
       clean = TRUE)"
 
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('scran')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                       biocLite('scater')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                     biocLite('GenomicRanges')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('IRanges')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                      biocLite('rtracklayer')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('GenVisR')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                     biocLite('Biostrings')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                   biocLite('SingleCellExperiment')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('edgeR')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('Rsamtools')"
-   R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+   R -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('seqinr')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
