@@ -27,39 +27,25 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    dpkg-reconfigure tzdata
 
    # Install some other useful R packages
-    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode'), \
+    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
 
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                     biocLite('scran')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                      biocLite('scater')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                    biocLite('GenomicRanges')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                     biocLite('IRanges')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                     biocLite('rtracklayer')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('GenVisR')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                    biocLite('Biostrings')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                  biocLite('SingleCellExperiment')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('edgeR')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('Rsamtools')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('seqinr')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('copynumber')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('QDNAseq')"
-   R -e "source('https://bioconductor.org/biocLite.R'); \
-                   biocLite('QDNAseq.hg19')"
+   R -e "BiocManager::install('scran')"
+   R -e "BiocManager::install('scater')"
+   R -e "BiocManager::install('GenomicRanges')"
+   R -e "BiocManager::install('IRanges')"
+   R -e "BiocManager::install('rtracklayer')"
+   R -e "BiocManager::install('GenVisR')"
+   R -e "BiocManager::install('Biostrings')"
+   R -e "BiocManager::install('SingleCellExperiment')"
+   R -e "BiocManager::install('edgeR')"
+   R -e "BiocManager::install('Rsamtools')"
+   R -e "BiocManager::install('seqinr')"
+   R -e "BiocManager::install('copynumber')"
+   R -e "BiocManager::install('QDNAseq')"
+   R -e "BiocManager::install('QDNAseq.hg19')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
