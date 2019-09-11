@@ -48,6 +48,7 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    R -e "BiocManager::install('QDNAseq.hg19')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
+   Rscript -e "install.packages('tensorflow'); tensorflow::install_tensorflow()"
    Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
    Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
 
