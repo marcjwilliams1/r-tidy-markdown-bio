@@ -1,5 +1,5 @@
 BootStrap: shub
-From: granek/singularity-rstudio-tidyverse:3.5.2
+From: granek/singularity-rstudio-tidyverse:3.6.0
 
 %labels
   Maintainer Marc J Williams
