@@ -58,6 +58,8 @@ From: granek/singularity-rstudio-tidyverse:3.5.2
                    biocLite('copynumber')"
    R -e "source('https://bioconductor.org/biocLite.R'); \
                    biocLite('QDNAseq')"
+   R -e "source('https://bioconductor.org/biocLite.R'); \
+                   biocLite('QDNAseq.hg19')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
