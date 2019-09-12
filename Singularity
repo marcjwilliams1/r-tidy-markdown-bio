@@ -47,14 +47,15 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    R -e "BiocManager::install('QDNAseq')"
    R -e "BiocManager::install('QDNAseq.hg19')"
 
-   RUN apt-get update
-   RUN apt-get install -y libpython-dev
-   RUN apt-get install -y libpython3-dev
-
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
+   Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
+
+   apt-get update
+   apt-get install -y libpython-dev
+   apt-get install -y libpython3-dev
+
    Rscript -e "install.packages('tensorflow'); tensorflow::install_tensorflow()"
    Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
-   Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
 
 %runscript
 pandoc "$@"
