@@ -27,7 +27,7 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    dpkg-reconfigure tzdata
 
    # Install some other useful R packages
-    Rscript -e "install.packages(pkgs = c('devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager'), \
+    Rscript -e "install.packages(pkgs = c('RColorBrewer', 'devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager', 'igraph'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
@@ -46,6 +46,8 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    R -e "BiocManager::install('copynumber')"
    R -e "BiocManager::install('QDNAseq')"
    R -e "BiocManager::install('QDNAseq.hg19')"
+   R -e "BiocManager::install('ggtree')"
+   R -e "BiocManager::install('ComplexHeatmap')"
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
