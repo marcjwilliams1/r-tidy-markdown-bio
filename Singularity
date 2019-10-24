@@ -52,12 +52,5 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
 
-   apt-get update
-   apt-get install -y libpython-dev
-   apt-get install -y libpython3-dev
-
-   Rscript -e "install.packages('tensorflow'); tensorflow::install_tensorflow()"
-   Rscript -e "library(devtools); install_github('Irrationone/cellassign')"
-
 %runscript
 pandoc "$@"
