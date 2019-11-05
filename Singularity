@@ -48,6 +48,9 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    R -e "BiocManager::install('QDNAseq.hg19')"
    R -e "BiocManager::install('ggtree')"
    R -e "BiocManager::install('ComplexHeatmap')"
+   R -e "BiocManager::install('org.Hs.eg.db')"
+   R -e "BiocManager::install('TxDb.Hsapiens.UCSC.hg19.knownGene')"
+
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
