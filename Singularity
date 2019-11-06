@@ -54,6 +54,7 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
    Rscript -e "library(devtools); install_github('VPetukhov/ggrastr')"
+   Rscript -e "library(devtools); install_github('FunGeST/Palimpsest')"
 
 %runscript
 pandoc "$@"
