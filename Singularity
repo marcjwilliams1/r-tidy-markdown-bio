@@ -50,6 +50,7 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    R -e "BiocManager::install('ComplexHeatmap')"
    R -e "BiocManager::install('org.Hs.eg.db')"
    R -e "BiocManager::install('TxDb.Hsapiens.UCSC.hg19.knownGene')"
+   R -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg19')"
 
 
    Rscript -e "library(devtools); install_github('im3sanger/dndscv')"
