@@ -1,5 +1,5 @@
-BootStrap: docker
-From: rocker/rstudio
+BootStrap: shub
+From: nickjer/singularity-rstudio:3.6.2
 
 %labels
   Maintainer Marc J Williams
