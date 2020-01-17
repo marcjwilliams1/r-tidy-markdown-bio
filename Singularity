@@ -1,5 +1,5 @@
-BootStrap: shub
-From: docker://rocker/rstudio
+BootStrap: docker
+From: rocker/rstudio
 
 %labels
   Maintainer Marc J Williams
