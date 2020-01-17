@@ -1,5 +1,5 @@
 BootStrap: shub
-From: granek/singularity-rstudio-tidyverse:3.6.0
+From: docker://rocker/rstudio
 
 %labels
   Maintainer Marc J Williams
@@ -27,7 +27,7 @@ From: granek/singularity-rstudio-tidyverse:3.6.0
    dpkg-reconfigure tzdata
 
    # Install some other useful R packages
-    Rscript -e "install.packages(pkgs = c('RColorBrewer', 'devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager', 'igraph', 'deconstructSigs', 'pracma', 'ClusterR', 'HMM', 'circlize', 'VGAM'), \
+    Rscript -e "install.packages(pkgs = c('tidyverse', 'RColorBrewer', 'devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager', 'igraph', 'deconstructSigs', 'pracma', 'ClusterR', 'HMM', 'circlize', 'VGAM'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
