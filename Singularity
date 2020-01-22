@@ -1,5 +1,5 @@
-BootStrap: shub
-From: nickjer/singularity-rstudio:3.6.2
+BootStrap: docker
+From: rocker/tidyverse
 
 %labels
   Maintainer Marc J Williams
@@ -8,26 +8,10 @@ From: nickjer/singularity-rstudio:3.6.2
 %help
   This will run RStudio Server with tidyverse and support for knitting plus pandoc for document conversion. Also included are a collection of bioconductor packages for single cell analysis
 
-%apprun rserver
-  exec rserver "${@}"
-
-%runscript
-  exec rserver "${@}"
-
-%environment
-  export PATH=/usr/lib/rstudio-server/bin:${PATH}
-
 %post
-   apt-get update && \
-   apt-get install -y build-essential git curl wget &&\
-   apt-get install -y tzdata language-pack-ja &&\
-   apt-get install -y texlive-base texlive-lang-japanese texlive-luatex latexmk xzdec pandoc nano
-   apt-get clean
-   update-locale LANG=ja_JP.UTF8
-   dpkg-reconfigure tzdata
 
    # Install some other useful R packages
-    Rscript -e "install.packages(pkgs = c('tidyverse', 'RColorBrewer', 'devtools', 'cowplot', 'rmarkdown', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'knitr', 'entropy', 'clues', 'aricode', 'BiocManager', 'igraph', 'deconstructSigs', 'pracma', 'ClusterR', 'HMM', 'circlize', 'VGAM'), \
+    Rscript -e "install.packages(pkgs = c('RColorBrewer', 'cowplot', 'gtools', 'argparse', 'uwot', 'fuzzyjoin', 'dbscan', 'jcolors', 'ggthemes', 'viridis', 'entropy', 'clues', 'aricode', 'BiocManager', 'igraph', 'deconstructSigs', 'pracma', 'ClusterR', 'HMM', 'circlize', 'VGAM'), \
       repos='https://cran.revolutionanalytics.com/', \
       dependencies=TRUE, \
       clean = TRUE)"
